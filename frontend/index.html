@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CatalogWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>CatalogWise</h1>
+    <p>Organizador inteligente de catálogo para marketplace</p>
+</header>
+
+<main>
+    <section class="dashboard">
+        <div class="card">
+            <h2 id="totalProdutos">0</h2>
+            <p>Total de produtos</p>
+        </div>
+
+        <div class="card pronto">
+            <h2 id="produtosProntos">0</h2>
+            <p>Prontos</p>
+        </div>
+
+        <div class="card revisar">
+            <h2 id="produtosRevisar">0</h2>
+            <p>Em revisão</p>
+        </div>
+
+        <div class="card incompleto">
+            <h2 id="produtosIncompletos">0</h2>
+            <p>Incompletos</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Cadastrar Produto</h2>
+
+        <form id="produtoForm">
+            <input type="text" id="sku" placeholder="SKU" required>
+            <input type="text" id="nome" placeholder="Nome do produto" required>
+            <input type="text" id="marca" placeholder="Marca" required>
+            <input type="text" id="categoria" placeholder="Categoria" required>
+            <input type="number" id="preco" placeholder="Preço" step="0.01" required>
+            <input type="number" id="estoque" placeholder="Estoque" required>
+            <textarea id="descricao" placeholder="Descrição" required></textarea>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p id="mensagem"></p>
+    </section>
+
+    <section class="lista-section">
+        <h2>Produtos cadastrados</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Pontuação</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="produtosTabela">
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>l>
