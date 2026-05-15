@@ -1,80 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>CatalogWise</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogwise — Início</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<div class="app-shell">
 
-<header>
-    <h1>CatalogWise</h1>
-    <p>Organizador inteligente de catálogo para marketplace</p>
+<header class="topbar">
+  <a href="index.html" class="brand" aria-label="Ir para início">
+    <div class="brand-mark"></div>
+    <div><span>Catalog</span><span>wise</span></div>
+  </a>
+  <div class="top-actions">
+    <a class="btn btn-ghost" href="login.html">Entrar</a>
+    <a class="btn btn-primary" href="cadastro.html">Começar grátis</a>
+  </div>
 </header>
 
 <main>
-    <section class="dashboard">
-        <div class="card">
-            <h2 id="totalProdutos">0</h2>
-            <p>Total de produtos</p>
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="spark"></span> Catálogos inteligentes para vender melhor</div>
+      <h1>Seu catálogo de produtos, <span class="gradient-text">mais bonito, rápido e organizado.</span></h1>
+      <p class="hero-copy">O Catalogwise ajuda lojas, revendedores e equipes comerciais a criarem catálogos digitais com visual profissional, produtos bem descritos e pronta apresentação para clientes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="cadastro.html">Criar meu catálogo</a>
+        <a class="btn btn-ghost" href="login.html">Já tenho conta</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><strong>3x</strong><span>mais rápido para organizar produtos</span></div>
+        <div class="stat-card"><strong>98%</strong><span>dos itens com dados completos</span></div>
+        <div class="stat-card"><strong>1 link</strong><span>para compartilhar com clientes</span></div>
+      </div>
+    </div>
+    <div class="product-preview">
+      <div class="mock-window">
+        <div class="mock-top"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="mock-search"></div></div>
+        <div class="mock-grid">
+          <div class="product-card"><div class="product-img">▣</div><div class="line mid"></div><div class="line short"></div></div>
+          <div class="product-card"><div class="product-img">◈</div><div class="line mid"></div><div class="line short"></div></div>
+          <div class="product-card"><div class="product-img">✦</div><div class="line mid"></div><div class="line short"></div></div>
+          <div class="product-card"><div class="product-img">⬡</div><div class="line mid"></div><div class="line short"></div></div>
         </div>
-
-        <div class="card pronto">
-            <h2 id="produtosProntos">0</h2>
-            <p>Prontos</p>
-        </div>
-
-        <div class="card revisar">
-            <h2 id="produtosRevisar">0</h2>
-            <p>Em revisão</p>
-        </div>
-
-        <div class="card incompleto">
-            <h2 id="produtosIncompletos">0</h2>
-            <p>Incompletos</p>
-        </div>
-    </section>
-
-    <section class="form-section">
-        <h2>Cadastrar Produto</h2>
-
-        <form id="produtoForm">
-            <input type="text" id="sku" placeholder="SKU" required>
-            <input type="text" id="nome" placeholder="Nome do produto" required>
-            <input type="text" id="marca" placeholder="Marca" required>
-            <input type="text" id="categoria" placeholder="Categoria" required>
-            <input type="number" id="preco" placeholder="Preço" step="0.01" required>
-            <input type="number" id="estoque" placeholder="Estoque" required>
-            <textarea id="descricao" placeholder="Descrição" required></textarea>
-
-            <button type="submit">Cadastrar</button>
-        </form>
-
-        <p id="mensagem"></p>
-    </section>
-
-    <section class="lista-section">
-        <h2>Produtos cadastrados</h2>
-
-        <table>
-            <thead>
-            <tr>
-                <th>SKU</th>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Categoria</th>
-                <th>Preço</th>
-                <th>Estoque</th>
-                <th>Pontuação</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody id="produtosTabela">
-            </tbody>
-        </table>
-    </section>
+      </div>
+      <div class="floating-card"><small>Qualidade do catálogo</small><strong>82% otimizado</strong><div class="progress"><span></span></div></div>
+    </div>
+  </section>
+  <section class="features">
+    <article class="feature-card"><div class="feature-icon">⌘</div><h3>Organização visual</h3><p>Produtos separados em cards, categorias, status e filtros para encontrar tudo sem perder tempo.</p></article>
+    <article class="feature-card"><div class="feature-icon">✦</div><h3>Descrições melhores</h3><p>Sugestões para deixar títulos, descrições e informações comerciais mais claras e vendáveis.</p></article>
+    <article class="feature-card"><div class="feature-icon">↗</div><h3>Compartilhamento simples</h3><p>Crie uma vitrine profissional e envie para clientes por link, WhatsApp ou equipe comercial.</p></article>
+  </section>
 </main>
-
-<script src="script.js"></script>
+</div>
 </body>
-</html>l>
+</html>

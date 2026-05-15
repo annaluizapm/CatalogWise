@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogwise — Cadastro</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+<header class="topbar">
+  <a href="index.html" class="brand" aria-label="Ir para início">
+    <div class="brand-mark"></div>
+    <div><span>Catalog</span><span>wise</span></div>
+  </a>
+  <div class="top-actions">
+    <a class="btn btn-ghost" href="login.html">Entrar</a>
+    <a class="btn btn-primary" href="cadastro.html">Começar grátis</a>
+  </div>
+</header>
+
+<main class="auth-page">
+  <form class="auth-panel" onsubmit="fakeSubmit(event,'principal.html','Cadastro criado! Bem-vinda ao Catalogwise.')">
+    <h2>Criar conta</h2>
+    <p>Monte seu primeiro catálogo profissional em poucos minutos.</p>
+    <div class="form-row">
+      <div class="field"><label for="name">Nome</label><input id="name" type="text" placeholder="Seu nome" required></div>
+      <div class="field"><label for="company">Empresa</label><input id="company" type="text" placeholder="Nome da loja" required></div>
+    </div>
+    <div class="field"><label for="signup-email">E-mail</label><input id="signup-email" type="email" placeholder="voce@email.com" required></div>
+    <div class="field"><label for="segment">Tipo de catálogo</label><select id="segment" required><option value="">Selecione uma opção</option><option>Máquinas e ferramentas</option><option>Moda e acessórios</option><option>Beleza e cosméticos</option><option>Casa e decoração</option><option>Outro segmento</option></select></div>
+    <div class="field"><label for="signup-password">Senha</label><input id="signup-password" type="password" placeholder="Crie uma senha" required></div>
+    <button class="btn btn-primary full-btn" type="submit">Começar grátis</button>
+    <div class="switch-auth">Já tem conta? <a href="login.html">Fazer login</a></div>
+  </form>
+  <div class="auth-visual">
+    <h3>Cadastre produtos, melhore descrições e publique um catálogo com cara profissional.</h3>
+    <p>Ideal para quem quer transformar listas bagunçadas em uma vitrine digital clara, bonita e fácil de navegar.</p>
+    <div class="check-list">
+      <div class="check-item"><span class="check">✓</span> Cadastro simples de produtos</div>
+      <div class="check-item"><span class="check">✓</span> Categorias e filtros inteligentes</div>
+      <div class="check-item"><span class="check">✓</span> Visual premium para clientes</div>
+    </div>
+  </div>
+</main>
+</div>
+<div id="toast" class="toast">Ação concluída</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

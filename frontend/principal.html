@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogwise — Principal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="dashboard-topbar">
+  <a href="principal.html" class="brand"><div class="brand-mark"></div><div><span>Catalog</span><span>wise</span></div></a>
+  <div class="top-actions"><div class="user-pill"><span class="avatar">AL</span> Anna Luiza</div><a class="btn btn-ghost" href="index.html">Sair</a></div>
+</header>
+<main class="dashboard">
+  <aside class="sidebar">
+    <div class="side-title">Painel</div>
+    <button class="side-link active">▦ Visão geral</button><button class="side-link">◈ Produtos</button><button class="side-link">▤ Catálogos</button><button class="side-link">✦ Otimizações</button><button class="side-link">↗ Compartilhar</button>
+    <div class="side-title">Conta</div>
+    <button class="side-link">⚙ Configurações</button><button class="side-link">? Ajuda</button>
+  </aside>
+  <section class="main">
+    <div class="main-head">
+      <div><h2>Principal</h2><p>Veja o desempenho do seu catálogo, produtos pendentes e sugestões de melhoria.</p></div>
+      <button class="btn btn-primary" id="toggleProductForm">+ Novo produto</button>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="metric-card"><span>Total de produtos</span><strong id="totalProdutos">0</strong><small>itens cadastrados</small></div>
+      <div class="metric-card"><span>Produtos prontos</span><strong id="produtosProntos">0</strong><small>prontos para publicar</small></div>
+      <div class="metric-card"><span>Produtos em revisão</span><strong id="produtosRevisar">0</strong><small style="color:#b45309;background:rgba(245,158,11,.15)">revisar dados</small></div>
+      <div class="metric-card"><span>Produtos incompletos</span><strong id="produtosIncompletos">0</strong><small style="color:#b91c1c;background:rgba(239,68,68,.12)">atenção necessária</small></div>
+    </div>
+
+    <section class="panel product-form-panel hidden" id="productFormPanel">
+      <div class="panel-head">
+        <h3 id="formTitle">Cadastrar produto</h3>
+        <button class="btn btn-ghost small-btn" type="button" id="cancelEdit">Cancelar</button>
+      </div>
+      <form id="produtoForm" class="product-form">
+        <input type="hidden" id="produtoId">
+        <div class="field"><label for="sku">SKU</label><input id="sku" type="text" placeholder="Ex: ABC123" required></div>
+        <div class="field"><label for="nome">Nome do produto</label><input id="nome" type="text" placeholder="Nome completo do produto" required></div>
+        <div class="field"><label for="marca">Marca</label><input id="marca" type="text" placeholder="Marca" required></div>
+        <div class="field"><label for="categoria">Categoria</label><input id="categoria" type="text" placeholder="Categoria" required></div>
+        <div class="field"><label for="preco">Preço</label><input id="preco" type="number" step="0.01" min="0" placeholder="0.00" required></div>
+        <div class="field"><label for="estoque">Estoque</label><input id="estoque" type="number" min="0" placeholder="0" required></div>
+        <div class="field field-full"><label for="descricao">Descrição</label><textarea id="descricao" placeholder="Descrição detalhada do produto" required></textarea></div>
+        <button class="btn btn-primary full-btn" type="submit" id="submitProduto">Salvar produto</button>
+      </form>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel">
+        <div class="panel-head"><h3>Produtos cadastrados</h3><div class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="Buscar produto..." oninput="filterProducts()"></div></div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-status="TODOS">Todos</button>
+          <button class="filter-btn" data-status="PRONTO">Pronto</button>
+          <button class="filter-btn" data-status="REVISAR">Revisar</button>
+          <button class="filter-btn" data-status="INCOMPLETO">Incompleto</button>
+        </div>
+        <div class="table-wrap">
+          <table class="catalog-table">
+            <thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Pontuação</th><th>Status</th><th>Ações</th></tr></thead>
+            <tbody id="productTable">
+              <tr><td colspan="6">Carregando produtos...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <aside class="panel">
+        <div class="panel-head"><h3>Insights</h3></div>
+        <div class="mini-chart"><div class="bar" style="height:42%"></div><div class="bar" style="height:58%"></div><div class="bar" style="height:48%"></div><div class="bar" style="height:73%"></div><div class="bar" style="height:86%"></div><div class="bar" style="height:76%"></div></div>
+        <div class="insight-list">
+          <div class="insight-card"><strong id="insightPrincipal">Carregando análise...</strong><p id="insightTexto">O Catalogwise vai analisar os produtos cadastrados na API.</p></div>
+          <div class="insight-card"><strong>Próximo passo recomendado</strong><p>Priorize produtos incompletos e em revisão para aumentar a qualidade do catálogo.</p></div>
+          <div class="insight-card"><strong>Regra de qualidade</strong><p>Título, descrição, marca, categoria, preço, estoque e SKU ajudam a formar a pontuação.</p></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+</div>
+<div id="toast" class="toast">Ação concluída</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
