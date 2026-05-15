@@ -1,10 +1,10 @@
 package com.annaluiza.catalogwise.service;
 
+import com.annaluiza.catalogwise.exception.ProdutoNaoEncontradoException;
+import com.annaluiza.catalogwise.exception.SkuDuplicadoException;
 import com.annaluiza.catalogwise.model.Produto;
 import com.annaluiza.catalogwise.model.StatusProduto;
 import com.annaluiza.catalogwise.repository.ProdutoRepository;
-import com.annaluiza.catalogwise.exception.SkuDuplicadoException;
-import com.annaluiza.catalogwise.exception.ProdutoNaoEncontradoException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -65,7 +65,12 @@ public class ProdutoService {
     }
 
     public void excluir(Long id) {
+        buscarPorId(id);
         produtoRepository.deleteById(id);
+    }
+
+    public List<Produto> listarPorStatus(StatusProduto status) {
+        return produtoRepository.findByStatus(status);
     }
 
     public int calcularPontuacao(Produto produto) {
@@ -120,9 +125,5 @@ public class ProdutoService {
         }
 
         return StatusProduto.INCOMPLETO;
-    }
-
-    public List<Produto> listarPorStatus(StatusProduto status) {
-        return produtoRepository.findByStatus(status);
     }
 }
